@@ -21,6 +21,10 @@ const Calculadora=()=>{
         }
     };
 
+    const limpiarResultado=()=>{
+        setResultado('');
+    };
+
 };
 
 export default Calculadora;
