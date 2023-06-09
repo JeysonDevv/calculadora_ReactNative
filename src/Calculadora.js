@@ -105,7 +105,7 @@ const Calculadora=()=>{
                     <Text style={styles.buttonText}>.</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={calcularResultado}
                 >
                     <Text style={styles.buttonText}>=</Text>
@@ -113,19 +113,19 @@ const Calculadora=()=>{
             </View>
             <View style={styles.row}>
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={()=>handleButtonPress('+')}
                 >
                     <Text style={styles.buttonText}>+</Text>
                 </TouchableOpacity>                
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={()=>handleButtonPress('-')}
                 >
                     <Text style={styles.buttonText}>-</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={()=>handleButtonPress('*')}
                 >
                     <Text style={styles.buttonText}>*</Text>
@@ -133,13 +133,13 @@ const Calculadora=()=>{
             </View>
             <View style={styles.row}>
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={()=>handleButtonPress('/')}
                 >
                     <Text style={styles.buttonText}>/</Text>
                 </TouchableOpacity>                
                 <TouchableOpacity
-                    style={styles.button}
+                    style={[styles.button, styles.operatorButton]}
                     onPress={limpiarResultado}
                 >
                     <Text style={styles.buttonText}>C</Text>
@@ -155,13 +155,15 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: '#F8F8F8',
     },
     resultContainer: {
       marginBottom: 20,
     },
     resultText: {
-      fontSize: 24,
+      fontSize: 30,
       fontWeight: 'bold',
+      color: '#333',
     },
     buttonContainer: {
       width: 300,
@@ -175,16 +177,19 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'green',
-      padding: 10,
+      backgroundColor: '#EAEAEA',
+      padding: 20,
       borderRadius: 5,
       margin: 4,
     },
     buttonText: {
-      fontSize: 20,
+      fontSize: 24,
       fontWeight: 'bold',
+      color: '#333',
     },
+    operatorButton: {
+        backgroundColor: '#4287f5', 
+      },
   });
-
 
 export default Calculadora;
